@@ -2343,7 +2343,54 @@ Aspirin,CC(=O)Oc1ccccc1C(=O)O"""
 # ============================================================
 # ASSESSMENT
 # ============================================================
+elif page == "🧪 Virtual pH Testing Lab":
 
+    st.title("🧪 Virtual pH Testing Lab")
+
+    st.write("Welcome to the Virtual Chemistry Lab!")
+
+    solutions = {
+        "Lemon Juice": 2,
+        "Vinegar": 3,
+        "Water": 7,
+        "Baking Soda": 8,
+        "Soap": 10
+    }
+
+    selected = st.selectbox(
+        "Choose a chemical solution",
+        list(solutions.keys())
+    )
+
+    ph = solutions[selected]
+
+    st.metric("pH Value", ph)
+
+    if ph < 7:
+        st.success("This solution is ACIDIC")
+    elif ph == 7:
+        st.info("This solution is NEUTRAL")
+    else:
+        st.warning("This solution is BASIC")
+
+    st.subheader("Experiment Result")
+
+    st.write("Selected solution:", selected)
+    st.write("pH value:", ph)
+
+    st.subheader("Knowledge Check")
+
+    answer = st.radio(
+        "What is the pH of pure water?",
+        ["3", "5", "7", "10"],
+        key="water_ph_quiz"
+    )
+
+    if st.button("Check Answer"):
+        if answer == "7":
+            st.success("Correct answer!")
+        else:
+            st.error("Try again!")
 elif page == "📝 Assessment":
 
     st.title("📝 Cheminformatics Assessment")
