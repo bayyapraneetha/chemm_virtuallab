@@ -1527,7 +1527,7 @@ page = st.sidebar.radio(
     "Navigation",
 
     [
-
+"🧪 Virtual pH Testing Lab",
         "🏠 Home",
 
         "📖 Theory",
